@@ -1,0 +1,7 @@
+== Ehcache Stats Reporter
+
+This is a PowerShell script I wrote in order to check the behavior of multiple standalone application nodes of Ehcache.
+
+Ehcache stats are gathered via jmx and reported to a csv file.
+
+This script depends on a java tool called Jmxterm. Check it out at http://wiki.cyclopsgroup.org/jmxterm.
