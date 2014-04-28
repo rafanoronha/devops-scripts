@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+set -o nounset
+set -o errexit
+
+CTXDIR=${0%/*}/..
+WORKDIR=/var/gocd-agent
+rm -rf $WORKDIR || true && mkdir $WORKDIR
+cd $CTXDIR
+cp -r * $WORKDIR
+cp gocd-agent/Dockerfile $WORKDIR
+docker build -t gocd-agent $WORKDIR

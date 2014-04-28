@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+set -o nounset
+set -o errexit
+
+CTXDIR=${0%/*}/..
+WORKDIR=/var/gocd-server
+rm -rf $WORKDIR || true && mkdir $WORKDIR
+cd $CTXDIR
+cp -r * $WORKDIR
+cp gocd-server/Dockerfile $WORKDIR
+docker build -t gocd-server $WORKDIR

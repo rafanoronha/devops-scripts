@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+set -o nounset
+set -o errexit
+
+cd ${0%/*}
+apt-get update && apt-get install -y wget unzip
+../install-jdk
+../install-git
+./install
+
+for arg
+do
+  ../install-$arg
+done

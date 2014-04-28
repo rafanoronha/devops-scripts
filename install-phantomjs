@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+apt-get install -y bzip2 build-essential chrpath git-core libssl-dev libfontconfig1-dev
